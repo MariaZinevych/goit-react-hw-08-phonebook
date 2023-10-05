@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { getVisibleContacts } from 'redux/selector';
-import { deleteContacts } from 'redux/operations';
+import { getVisibleContacts } from 'redux/tasks/selector';
+import { deleteContacts } from 'redux/tasks/operations';
 
 export const ContactList = () => {
   const contacts = useSelector(getVisibleContacts);

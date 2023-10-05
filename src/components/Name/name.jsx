@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContacts } from 'redux/operations';
-import { getContacts } from 'redux/selector';
+import { addContacts } from 'redux/tasks/operations';
+import { getContacts } from 'redux/tasks/selector';
 import { nanoid } from '@reduxjs/toolkit';
 
 const nameId = nanoid();
