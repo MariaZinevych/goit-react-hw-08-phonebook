@@ -15,6 +15,5 @@ const Header = () => {
     </Container>
   );
 };
-// qw
 
 export default Header;
