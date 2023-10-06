@@ -1,21 +1,27 @@
-import { useDispatch } from 'react-redux';
-import { logOut } from 'redux/auth/operation';
-import { selectUser } from 'redux/auth/selector';
-import { useSelector } from 'react-redux';
+import React from 'react';
+import { Box, Button } from '@chakra-ui/react';
+import useAuth from 'hooks/useAuth';
 
-// Компонент UserMenu відповідає за меню користувача, якщо користувач авторизований
-export const UserMenu = () => {
-  const user = useSelector(selectUser);
+import { useDispatch } from 'react-redux';
+import { logOut } from 'redux/auth/authOperations';
+
+const UserMenu = () => {
   const dispatch = useDispatch();
+  const { user } = useAuth();
 
   return (
-    <div>
-      <p>Welcome to Phonebook {user.name} </p>{' '}
-      {/* Відображення привітання з ім'ям користувача */}
-      <button type="button" onClick={() => dispatch(logOut())}>
+    <Box display="flex" gap="30px" ml="auto">
+      <p>{user.name}</p>
+      <Button
+        variant="link"
+        color="inherit"
+        _hover={{ textDecoration: 'none', color: 'purple.600' }}
+        onClick={() => dispatch(logOut())}
+      >
         Logout
-      </button>{' '}
-      {/* Кнопка для виходу з облікового запису користувача */}
-    </div>
+      </Button>
+    </Box>
   );
 };
+
+export default UserMenu;
