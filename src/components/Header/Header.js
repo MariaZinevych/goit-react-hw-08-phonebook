@@ -1,9 +1,10 @@
 import React from 'react';
-import { Container } from '@chakra-ui/react';
+
 import AuthNav from 'components/AuthNavigation/AuthNavigation';
 import Navigation from 'components/Navigation/Navigation';
 import useAuth from 'hooks/useAuth';
-import UserMenu from 'components/UserMenu/UserMenu';
+import UserMenu from 'components/UserMenu/userMenu';
+import { Container } from '@chakra-ui/react';
 
 const Header = () => {
   const { isLoggedIn } = useAuth();
